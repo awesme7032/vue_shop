@@ -157,10 +157,10 @@ export default {
       this.getParentCateList()
       this.addCateDialogVisible = true
     },
-    // 获取父级分类的数据列表
+    // 获取父级分类的数据列表 type 1 2 3 为查询到具体几级 eg:3为到三级
     async getParentCateList () {
       const { data: res } = await this.$http.get('categories', {
-        params: { type: 2 }
+        params: { type: 3 }
       })
       if (res.meta.status !== 200) {
         return this.$message.error('获取父级分类失败!')
