@@ -14,7 +14,7 @@
       <el-aside :width="isCollapse ? '64px':'200px'">
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧边栏菜单区域 -->
-        <el-menu :default-active="activePath" background-color="#333744" text-color="#fff" active-text-color="#ffd04b" :unique-opened="true" :collapse="isCollapse" :collapse-transition="false" router="true">
+        <el-menu :default-active="activePath" background-color="#333744" text-color="#fff" active-text-color="#ffd04b" :unique-opened="true" :collapse="isCollapse" :collapse-transition="false" router>
           <!-- 一级菜单 -->
           <el-submenu :index="item.id + ''" v-for="item in menulist" :key="item.id">
             <!-- 一级菜单的模板区 -->
@@ -73,7 +73,6 @@ export default {
       const { data: res } = await this.$http.get('menus')
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.menulist = res.data
-      console.log(res)
     },
     // 点击按钮，切换菜单的折叠与保存
     toggleCollapse () {
