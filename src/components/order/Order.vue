@@ -34,7 +34,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template slot-scope="scope">
+          <template>
             <el-button type="primary" icon="el-icon-edit" size="mini" @click="showBox">编辑地址</el-button>
             <el-button type="success" icon="el-icon-delete" size="mini" @click="showProgessBox">物流进度</el-button>
           </template>
