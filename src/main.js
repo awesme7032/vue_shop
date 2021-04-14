@@ -32,7 +32,7 @@ Vue.component('tree-table', TreeTable)
 Vue.use(VueQuillEditor, /* { default global options } */)
 
 // 全局过滤器
-Vue.filter('dataFormat', function (originVal) {
+Vue.filter('dateFormat', function (originVal) {
   const dt = new Date(originVal)
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0') //月份不足的为0
